@@ -7,26 +7,10 @@ Cypress.on('uncaught:exception', (err, runnable) => {
   })
 
   describe('Exception Handling In Cypress', () => {
+    beforeEach(() => { //No before Each 
+      cy.visit('https://www.konga.com/');//Scenerio is wrong
 
-    it('Navigate to webpage', () => {
-
-        Cypress.on('fail', (error, runnable) => {
-
-
-        })
-
-        cy.visit('https://www.konga.com/');
-
-        cy.get('._3b382_2WveR > ._7ad32_SD12Y > span',)
-
-        })
-
-    })
-
-describe('Launching Konga',() => {
-  before(()=> {
-    cy.visit('/')
-})
+  })
 
   it('Should be able to launch url', () => {
 cy.get(signinAP.MyAcctBtn).click()
