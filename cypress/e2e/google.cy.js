@@ -7,14 +7,24 @@ describe('Testing Google', ()=> {
 
 it('Execute a search function',()=>{
     cy.visit('https://google.com/')
+    //cy.wait(60000)
 
-//Search by typing inside the google search field
+    //Search by typing inside the google search field
     //cy.get('[name="q"]').type('Nigeria most visit country{enter}')
     //cy.contains('Image').click()
 
 
-//Handlng Auto-suggetion 
+    //Handlng Auto-suggetion 
     cy.get('.gLFyf').type('best food in nigeria')
-    cy.contains('best food in nigeria').click()
+    cy.contains('best restaurants in nigeria').click()
+
+
+    //Assertions
+    cy.get('.gLFyf')
+        .should('be.enabled')
+        .should('have.class', 'gLFyf')
+        .should('')
+
+
 
 })
